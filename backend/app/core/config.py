@@ -10,7 +10,7 @@ class Settings(BaseSettings):
 
     # Database
     DATABASE_URL: str = Field(
-        default="sqlite+aiosqlite:///./prip.db",
+        default="postgresql+asyncpg://user:password@ep-wandering-voice-ax3dccyv-pooler.c-4.us-east-2.aws.neon.tech/neondb",
         description="Async Database connection URL (PostgreSQL asyncpg or SQLite aiosqlite)"
     )
 

@@ -18,6 +18,7 @@ elif "postgresql+asyncpg" in db_url:
         "ssl": ssl_ctx,
         "timeout": 15.0,
         "command_timeout": 30.0,
+        "statement_cache_size": 0,
     }
     engine_kwargs["pool_pre_ping"] = True
     engine_kwargs["pool_recycle"] = 300
