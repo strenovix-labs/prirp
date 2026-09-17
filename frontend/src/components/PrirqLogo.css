@@ -1,0 +1,36 @@
+.prirq-logo-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.prirq-logo-container.small {
+  height: 40px;
+  width: auto;
+}
+
+.prirq-logo-container.medium {
+  height: 64px;
+  width: auto;
+}
+
+.prirq-logo-container.large {
+  height: clamp(90px, 16vw, 180px);
+  width: auto;
+}
+
+.prirq-logo-img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 20px rgba(255, 0, 51, 0.75));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.prirq-logo-container:hover .prirq-logo-img {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 35px rgba(255, 0, 51, 1));
+  transform: scale(1.04);
+}
+

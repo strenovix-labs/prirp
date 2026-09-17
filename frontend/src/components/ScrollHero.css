@@ -1,0 +1,287 @@
+.scroll-hero-container {
+  position: relative;
+  width: 100%;
+  height: 600vh;
+  background-color: var(--bg-primary);
+}
+
+.scroll-hero-sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+}
+
+.scroll-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.scroll-hero-overlay-dark {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.75) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Floating Live Frame Indicator Pill */
+.hero-progress-pill {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: rgba(6, 6, 8, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-sporty);
+  font-style: italic;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--text-primary);
+  pointer-events: none;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.85), 0 0 18px rgba(136, 5, 4, 0.18);
+}
+
+.dot-live {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #880504;
+  box-shadow: 0 0 8px #880504, 0 0 14px #880504;
+  animation: pulse-dot 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+.progress-separator {
+  color: var(--text-muted);
+}
+
+/* Base Editorial Text Stage */
+.hero-text-stage {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  color: #d1b2b2;
+  max-width: 90%;
+}
+
+/* Stage 1: Centered Hero View */
+.stage-1 {
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 860px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-sporty);
+  font-style: italic;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: #880504;
+  margin-bottom: 18px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Center Logo Image in Middle of Page */
+.hero-center-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 14px 0 22px 0;
+  width: 100%;
+}
+
+.hero-center-logo-img {
+  width: clamp(170px, 22vw, 250px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 15px rgba(136, 5, 4, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero-center-logo-img:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 1)) drop-shadow(0 0 20px rgba(136, 5, 4, 0.6));
+}
+
+.hero-tagline {
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #880504;
+  margin-bottom: 28px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Middle Down Static Navigation Links */
+.hero-middle-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(136, 5, 4, 0.3);
+  padding: 12px 28px;
+  border-radius: 999px;
+  backdrop-filter: blur(16px);
+  margin-bottom: 36px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
+  pointer-events: auto;
+}
+
+.hero-nav-item {
+  color: #d1b2b2;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  transition: color 0.25s ease, transform 0.25s ease;
+  font-family: var(--font-sporty);
+  font-style: italic;
+}
+
+.hero-nav-item:hover {
+  color: #880504;
+  transform: translateY(-1px);
+}
+
+.hero-nav-sep {
+  color: #880504;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.hero-scroll-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sporty);
+  font-style: italic;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: rgba(209, 178, 178, 0.85);
+}
+
+.cue-line {
+  width: 2px;
+  height: 36px;
+  background: linear-gradient(to bottom, #880504, transparent);
+  box-shadow: 0 0 8px rgba(136, 5, 4, 0.8);
+  animation: cue-drop 1.8s infinite ease-in-out;
+}
+
+@keyframes cue-drop {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+/* Stage 2 & 4: Left Aligned Editorial Statement (Transparent Floating Text) */
+.stage-2,
+.stage-4 {
+  left: 7%;
+  top: 35%;
+  text-align: left;
+  max-width: 480px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+/* Stage 3: Right Aligned Editorial Statement (Transparent Floating Text) */
+.stage-3 {
+  right: 7%;
+  top: 35%;
+  text-align: left;
+  max-width: 480px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+.stage-num {
+  display: inline-block;
+  font-family: var(--font-sporty);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--chrome-red);
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+}
+
+.stage-headline {
+  font-family: var(--font-sporty);
+  font-style: italic;
+  font-size: clamp(22px, 2.7vw, 34px);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.22;
+  color: #d1b2b2;
+  margin-bottom: 14px;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.98), 0 0 28px rgba(0, 0, 0, 0.9);
+}
+
+.stage-desc {
+  font-size: 15px;
+  color: rgba(209, 178, 178, 0.9);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.98), 0 0 16px rgba(0, 0, 0, 0.85);
+}
+
+@media (max-width: 768px) {
+  .stage-2,
+  .stage-3,
+  .stage-4 {
+    left: 6%;
+    right: 6%;
+    top: auto;
+    bottom: 90px;
+    max-width: 90%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+}

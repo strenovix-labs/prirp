@@ -1,0 +1,447 @@
+/* =========================================================================
+   PRIRP ENERGY — REACT BITS-STYLE PILL NAVBAR
+   Colors: #000000 | #040406 | #F40001 | #ffffff
+   Typography: Poppins, sans-serif
+   ========================================================================= */
+
+/* Top-Left Corner Fixed Logo */
+.prirq-top-left-logo-link {
+  position: fixed;
+  top: 24px;
+  left: 32px;
+  z-index: 10000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+  will-change: transform;
+}
+
+.prirq-top-left-logo-link:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 16px rgba(136, 5, 4, 0.6));
+}
+
+/* =========================================================================
+   DESKTOP DOCK: FIXED BOTTOM CENTER PILL
+   ========================================================================= */
+
+.prirq-pill-nav-dock {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.prirq-pill-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 6px;
+  background: rgba(4, 4, 6, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(136, 5, 4, 0.32);
+  border-radius: 9999px;
+  box-shadow: 
+    0 14px 40px rgba(0, 0, 0, 0.92),
+    0 0 22px rgba(136, 5, 4, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  user-select: none;
+}
+
+.prirq-pill-container:hover {
+  border-color: rgba(136, 5, 4, 0.58);
+  box-shadow: 
+    0 16px 45px rgba(0, 0, 0, 0.96),
+    0 0 32px rgba(136, 5, 4, 0.32),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+/* Animated Sliding Pill Capsule Indicator */
+.prirq-pill-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(136, 5, 4, 0.22) 0%,
+    rgba(136, 5, 4, 0.08) 100%
+  );
+  border: 1px solid rgba(136, 5, 4, 0.75);
+  box-shadow: 
+    0 0 18px rgba(136, 5, 4, 0.38),
+    inset 0 0 10px rgba(136, 5, 4, 0.2);
+  transition: 
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+  will-change: transform, width, height;
+}
+
+/* Indicator over ORDER PRIRP CTA */
+.prirq-pill-indicator.is-cta-active {
+  background: linear-gradient(135deg, #a80a09 0%, #880504 50%, #5c0202 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 0 24px rgba(136, 5, 4, 0.8),
+    0 2px 10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* List & Items */
+.prirq-pill-list {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.prirq-pill-item-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Links */
+.prirq-pill-link {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 20px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-family: var(--font-sporty);
+  font-style: italic;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.prirq-pill-text {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prirq-pill-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7), 0 0 20px rgba(136, 5, 4, 0.4);
+}
+
+.prirq-pill-link.active {
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 24px rgba(136, 5, 4, 0.6);
+}
+
+/* ORDER PRIRP CTA Link Customization */
+.prirq-pill-link.pill-cta {
+  color: #ffffff;
+  font-family: var(--font-sporty);
+  font-style: italic;
+  font-weight: 700;
+  padding: 9px 22px;
+  border: 1px solid rgba(136, 5, 4, 0.45);
+  background: rgba(0, 0, 0, 0.4);
+  margin-left: 4px;
+  box-shadow: 0 0 12px rgba(136, 5, 4, 0.2);
+}
+
+.prirq-pill-link.pill-cta.active,
+.prirq-pill-link.pill-cta.hovered {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.cta-ambient-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  box-shadow: inset 0 0 8px rgba(136, 5, 4, 0.35);
+  animation: prirqPulse 3s infinite ease-in-out;
+}
+
+@keyframes prirqPulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* Visibility toggles */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* =========================================================================
+   MOBILE RESPONSIVE NAVIGATION
+   ========================================================================= */
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+
+  .prirq-top-left-logo-link {
+    top: 16px;
+    left: 16px;
+  }
+
+  /* Compact Floating Pill Trigger at Bottom Center */
+  .prirq-mobile-nav-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    pointer-events: auto;
+  }
+
+  .prirq-mobile-pill-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 44px;
+    padding: 0 18px;
+    background: rgba(4, 4, 6, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(136, 5, 4, 0.5);
+    border-radius: 9999px;
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.95),
+      0 0 20px rgba(136, 5, 4, 0.3);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .prirq-mobile-pill-trigger:active {
+    transform: scale(0.96);
+  }
+
+  .prirq-mobile-pill-trigger.open {
+    border-color: #880504;
+    box-shadow: 
+      0 12px 35px rgba(0, 0, 0, 0.98),
+      0 0 28px rgba(136, 5, 4, 0.5);
+  }
+
+  .mobile-pill-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #880504;
+    box-shadow: 0 0 10px #880504, 0 0 4px #ffffff;
+    animation: prirqPulse 2s infinite ease-in-out;
+  }
+
+  .mobile-pill-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  .mobile-hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 14px;
+    height: 12px;
+  }
+
+  .mobile-hamburger-lines .line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  }
+
+  .prirq-mobile-pill-trigger.open .line-1 {
+    transform: translateY(3px) rotate(45deg);
+    background-color: #880504;
+  }
+
+  .prirq-mobile-pill-trigger.open .line-2 {
+    transform: translateY(-3px) rotate(-45deg);
+    background-color: #880504;
+  }
+
+  /* Floating Popover Menu */
+  .prirq-mobile-popover {
+    position: fixed;
+    bottom: 74px;
+    left: 50%;
+    transform: translateX(-50%) translateY(14px) scale(0.95);
+    width: calc(100vw - 32px);
+    max-width: 320px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 
+      opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 9998;
+  }
+
+  .prirq-mobile-popover.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+
+  .prirq-mobile-popover-inner {
+    background: rgba(4, 4, 6, 0.96);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(136, 5, 4, 0.45);
+    border-radius: 22px;
+    padding: 16px 12px;
+    box-shadow: 
+      0 20px 50px rgba(0, 0, 0, 0.95),
+      0 0 35px rgba(136, 5, 4, 0.25);
+  }
+
+  .mobile-popover-header {
+    padding: 4px 10px 10px 10px;
+    border-bottom: 1px solid rgba(136, 5, 4, 0.2);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .mobile-popover-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+  }
+
+  .prirq-mobile-menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mobile-menu-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 9999px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+    transition: all 0.25s ease;
+  }
+
+  .mobile-item-index {
+    font-family: 'Poppins', monospace, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(136, 5, 4, 0.8);
+    margin-right: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .mobile-item-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    flex: 1;
+  }
+
+  .mobile-item-active-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #880504;
+    box-shadow: 0 0 8px #880504;
+  }
+
+  .mobile-menu-link:hover,
+  .mobile-menu-link.active {
+    background: rgba(136, 5, 4, 0.15);
+    border-color: rgba(136, 5, 4, 0.6);
+  }
+
+  .mobile-menu-link:hover .mobile-item-label,
+  .mobile-menu-link.active .mobile-item-label {
+    color: #ffffff;
+  }
+
+  .mobile-menu-link.mobile-cta-link {
+    background: linear-gradient(135deg, #a80a09 0%, #880504 100%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 16px rgba(136, 5, 4, 0.5);
+    margin-top: 4px;
+  }
+
+  .mobile-menu-link.mobile-cta-link .mobile-item-index {
+    color: #ffffff;
+  }
+
+  .mobile-menu-link.mobile-cta-link .mobile-item-label {
+    color: #ffffff;
+    font-weight: 700;
+  }
+}

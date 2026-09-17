@@ -1,0 +1,7 @@
+.prip-app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}

@@ -1,0 +1,88 @@
+.product-frame-container {
+  position: relative;
+  width: 100%;
+  height: 350vh;
+}
+
+.product-frame-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 30px;
+}
+
+.frame-canvas-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 9 / 16;
+  max-height: 82vh;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #e0e0e4;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.9),
+    0 0 50px rgba(230, 57, 70, 0.15),
+    inset 0 0 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-frame-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #e0e0e4;
+}
+
+/* Floating Angle & Phase Badge */
+.frame-rotation-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(7, 7, 7, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.badge-sep {
+  color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .product-frame-sticky {
+    padding: 16px;
+    height: 70vh;
+  }
+  
+  .frame-canvas-frame {
+    max-width: 340px;
+    max-height: 60vh;
+  }
+  
+  .frame-rotation-badge {
+    font-size: 9px;
+    padding: 6px 12px;
+  }
+}

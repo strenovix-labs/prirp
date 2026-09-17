@@ -1,0 +1,311 @@
+/* =========================================================================
+   FOUNDER PAGE STYLES - GSAP SCROLL PIN REVEAL
+   ========================================================================= */
+
+.founder-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-primary, #000000);
+  color: var(--text-primary, #d1b2b2);
+  position: relative;
+  overflow-x: clip;
+}
+
+/* =========================================================================
+   HERO SECTION: LIGHT PILLAR & FLOATING SPLIT FLAP TEXT
+   ========================================================================= */
+.founder-hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+  padding: 0 4vw;
+}
+
+.founder-hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.founder-hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: contrast(1.1) brightness(0.9);
+}
+
+.founder-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.88) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.founder-hero-overlay {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* Split Flap Floating Mechanical Board */
+.founder-splitflap-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 auto;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.98)) drop-shadow(0 0 30px rgba(239, 68, 68, 0.45));
+}
+
+
+/* =========================================================================
+   FOUNDER SHOWCASE SECTION: RECTANGLE IMAGE LEFT, TITLE + TEXT + IMAGE RIGHT
+   ========================================================================= */
+.founder-showcase-section {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  padding: 100px 5vw;
+  border-top: 1px solid rgba(244, 0, 1, 0.15);
+  overflow: hidden;
+}
+
+.founder-showcase-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left Column: Rectangular Image */
+.founder-left-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.founder-rect-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(244, 0, 1, 0.25);
+  background: #08080a;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(244, 0, 1, 0.08);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.founder-rect-image-wrapper:hover {
+  transform: translateY(-4px);
+  border-color: rgba(244, 0, 1, 0.5);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(244, 0, 1, 0.2);
+}
+
+.founder-rect-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.founder-rect-image-wrapper:hover .founder-rect-image {
+  transform: scale(1.03);
+}
+
+.founder-rect-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+}
+
+/* Right Column: Title, Content, and Secondary Image */
+.founder-right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.founder-kicker {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: var(--chrome-red, #F40001);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.founder-right-title {
+  font-family: var(--font-sporty, 'LeagueGothic-CondensedItalic', 'Poppins', sans-serif);
+  font-size: clamp(34px, 4.2vw, 56px);
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.05;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.title-highlight {
+  color: var(--chrome-red, #F40001);
+  text-shadow: 0 0 25px rgba(244, 0, 1, 0.4);
+}
+
+.founder-right-content {
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.7;
+  color: var(--text-secondary, rgba(209, 178, 178, 0.8));
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.founder-sub-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #08080a;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  margin-top: 8px;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.founder-sub-image-wrapper:hover {
+  transform: translateY(-2px);
+  border-color: rgba(244, 0, 1, 0.35);
+}
+
+.founder-sub-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .founder-showcase-section {
+    padding: 70px 5vw;
+  }
+
+  .founder-showcase-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .founder-rect-image-wrapper {
+    max-width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* Editorial Footer Revealed After Scroll Expand Completes */
+.founder-footer {
+  border-top: 1px solid rgba(136, 5, 4, 0.25);
+  padding: 48px 4vw;
+  background: #000000;
+  position: relative;
+  z-index: 10;
+}
+
+.founder-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-copyright {
+  color: var(--text-muted);
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-links a,
+.footer-top-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-top-link:hover {
+  color: var(--chrome-red);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .founder-splitflap-wrapper {
+    transform: scale(0.65);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 480px) {
+  .founder-splitflap-wrapper {
+    transform: scale(0.48);
+    transform-origin: center center;
+  }
+}
